@@ -1,9 +1,18 @@
-html,
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100;400;700&family=Space+Grotesk:wght@400;700&display=swap");
+
+:root {
+  --font-titles: "Space Grotesk";
+  --font-body: "Roboto";
+  --strong-black: #000000;
+  --black: #2e2e2e;
+  --primary: #6c5ccc;
+  --soft-grey: #f1f1f1;
+  --strong-white: #ffffff;
+}
+
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
