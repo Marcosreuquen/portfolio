@@ -1,69 +1,24 @@
 import { useTestimonials } from "hooks";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Paragraph from "ui/Paragraph";
 import PersonCard from "ui/PersonCard";
+import { Buttons, LeftButton, RightButton, Quote, Section } from "./styled";
+const Fade = require("react-reveal/Fade");
 
-const Section = styled.section`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  height: 40vh;
-  background-color: var(--soft-grey);
-  @media (max-width: 769px) {
-    display: flex;
-    height: 40vh;
-    flex-direction: column-reverse;
-  } ;
-`;
-
-const Quote = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10%;
-`;
-
-const Buttons = styled.div`
-  background-color: transparent;
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 40vh;
-`;
-const LeftButton = styled.img`
-  cursor: pointer;
-  filter: drop-shadow(2px 3px 2px var(--primary));
-  position: absolute;
-  top: 44%;
-  left: 4px;
-  padding: 4px;
-  &:hover {
-    filter: drop-shadow(2px 3px 2px var(--black));
-    transition: 1s;
-  }
-`;
-const RightButton = styled.img`
-  cursor: pointer;
-  filter: drop-shadow(2px 3px 2px var(--primary));
-  position: absolute;
-  top: 44%;
-  right: 4px;
-  &:hover {
-    filter: drop-shadow(2px 3px 2px var(--black));
-    transition: 1s;
-  }
-`;
 const Testimonials = () => {
-  const testimonials = useTestimonials();
+  const testimonials: any[] = useTestimonials() || [];
   const [index, setIndex] = useState(0);
-  const [client, setClient] = useState(testimonials[index] || {});
+  const [client, setClient] = useState(testimonials.at(index) || {});
+  const [change, setChange] = useState(true);
 
   useEffect(() => {
-    setClient(testimonials[index]);
+    setChange(true);
+    setClient(testimonials.at(index));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   const handlePrev = () => {
+    setChange(false);
     if (index - 1 <= 0) {
       setIndex(testimonials.length - 1);
     } else {
@@ -71,7 +26,8 @@ const Testimonials = () => {
     }
   };
 
-  const handleNext = (e: any) => {
+  const handleNext = () => {
+    setChange(false);
     if (index + 1 >= testimonials.length) {
       setIndex(0);
     } else {
@@ -93,11 +49,15 @@ const Testimonials = () => {
           onClick={handleNext}
         />
       </Buttons>
-      <Section>
-        <Quote>
-          <Paragraph weight='italic'>{client?.quote}</Paragraph>
-        </Quote>
-        <PersonCard img={client?.img}>{client?.name}</PersonCard>
+      <Section id='testimonials'>
+        {testimonials && client ? (
+          <Fade right when={change}>
+            <Quote>
+              <Paragraph weight='italic'>{client?.quote}</Paragraph>
+            </Quote>
+            <PersonCard img={client?.img}>{client?.name}</PersonCard>
+          </Fade>
+        ) : null}
       </Section>
     </>
   );

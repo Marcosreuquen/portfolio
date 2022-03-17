@@ -4,7 +4,7 @@ type weights = "bold" | false;
 
 export const StyledP = styled.p`
   font-family: ${(props: { weight: weights }) =>
-    props.weight == "bold" ? "var(--font-titles)" : "var(--font-body)"};
+    props.weight == "bold" ? "var(--font-title)" : "var(--font-body)"};
   font-style: ${(props: { weight: weights }) =>
     props.weight == "bold" ? "bold" : "normal"};
   font-weight: ${(props: { weight: weights }) =>

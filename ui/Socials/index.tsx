@@ -1,17 +1,9 @@
-import styled from "styled-components";
-import Paragraph from "ui/Paragraph";
 import Link from "ui/Link";
+import { Nav } from "./styled";
 
-const Nav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  justify-self: center;
-`;
 const Socials = () => {
   return (
-    <Nav>
+    <Nav id='socials'>
       <Link
         icon='m'
         img='/linkedin.svg'

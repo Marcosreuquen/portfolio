@@ -1,27 +1,14 @@
 import { useProjects } from "hooks";
-import styled from "styled-components";
 import Caption from "ui/Caption";
 import Subtitle from "ui/Subtitle";
 import WorkCard from "ui/WorkCard";
-
-const Section = styled.section`
-  padding: 5%;
-`;
-const Grid = styled.article`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  padding: 5% 0;
-`;
+import { Section, Grid } from "./styled";
 
 const Projects = () => {
   const projects = useProjects();
 
   return (
-    <Section>
+    <Section id='projects'>
       <Caption primary={true}>MY PROJECTS</Caption>
       <Subtitle>This is my work</Subtitle>
       <Grid>

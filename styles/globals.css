@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100;400;700&family=Space+Grotesk:wght@400;700&display=swap");
 
+html,
 :root {
-  --font-titles: "Space Grotesk";
+  --font-title: "Space Grotesk", "Poppins";
   --font-body: "Roboto";
   --strong-black: #000000;
   --black: #2e2e2e;
   --primary: #6c5ccc;
   --soft-grey: #f1f1f1;
   --strong-white: #ffffff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,4 +24,12 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.bm-menu-wrap {
+  /* background-color: #2e2e2e99 !important; */
+  margin-top: 12px !important;
+  /* background-color: var(--strong-black) !important; */
+  padding: 8px !important;
+  background: rgba(0, 0, 0, 0.5);
 }

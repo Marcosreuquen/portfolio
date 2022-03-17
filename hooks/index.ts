@@ -1,6 +1,7 @@
 import useSWRImmutable from "swr";
 import { contentFetcher } from "lib";
 import type { cmd_content_type } from "lib";
+import { useEffect } from "react";
 
 const useCMD = (type: cmd_content_type) => {
   const { data, error } = useSWRImmutable(type, contentFetcher);
@@ -93,4 +94,10 @@ export const useAboutMe = () => {
   };
 
   return aboutme;
+};
+
+export const useApiTest = async () => {
+  const res = await (await fetch("/api/hello")).json();
+  console.log(res);
+  return res;
 };

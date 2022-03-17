@@ -9,14 +9,14 @@ import {
   MainContainer,
   ServicesContainer,
   TitlesContainer,
-} from "./style";
+} from "./styled";
 
 const Main = () => {
   const services = useServices();
   const aboutMe = useAboutMe();
 
   return (
-    <MainContainer>
+    <MainContainer id='about'>
       <TitlesContainer>
         <Caption primary={true}>ABOUT ME</Caption>
         <Subtitle>{aboutMe?.greetings}</Subtitle>
@@ -24,7 +24,7 @@ const Main = () => {
       <AboutMeContainer>
         <Paragraph weight='regular'>{aboutMe?.content}</Paragraph>
       </AboutMeContainer>
-      <ServicesContainer>
+      <ServicesContainer id='services'>
         {services?.map((service: any) => {
           return (
             <Service

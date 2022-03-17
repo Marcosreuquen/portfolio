@@ -1,6 +1,7 @@
 import Paragraph from "ui/Paragraph";
-import { Card, Image, Nav, Content } from "./style";
+import { Card, Nav, Content } from "./styled";
 import Link from "ui/Link";
+const Fade = require("react-reveal/Fade");
 
 const WorkCard = (props: {
   children: string;
@@ -10,21 +11,27 @@ const WorkCard = (props: {
   web: string;
 }) => {
   return (
-    <Card>
-      <Image className='image' src={props.img} alt='foto' />
-      <Content className='content'>
-        <Paragraph weight='bold'>{props.title}</Paragraph>
-        <Paragraph weight='regular'>{props.children}</Paragraph>
-        <Nav>
-          {props.repo ? (
-            <Link url={props.repo} img='/code.svg' name='Repository' icon='s' />
-          ) : null}
-          {props.web ? (
-            <Link icon='s' img='/web.svg' name='Demo' url={props.web} />
-          ) : null}
-        </Nav>
-      </Content>
-    </Card>
+    <Fade bottom>
+      <Card>
+        <Content className='content' img={props.img}>
+          <Paragraph weight='bold'>{props.title}</Paragraph>
+          <Paragraph weight='regular'>{props.children}</Paragraph>
+          <Nav>
+            {props.repo ? (
+              <Link
+                url={props.repo}
+                img='/code.svg'
+                name='Repository'
+                icon='s'
+              />
+            ) : null}
+            {props.web ? (
+              <Link icon='s' img='/web.svg' name='Demo' url={props.web} />
+            ) : null}
+          </Nav>
+        </Content>
+      </Card>
+    </Fade>
   );
 };
 

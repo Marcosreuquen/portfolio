@@ -1,17 +1,8 @@
-import styled from "styled-components";
 import Button from "ui/Button";
 import Caption from "ui/Caption";
 import Input from "ui/Input";
 import Swal from "sweetalert2";
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: baseline;
-  max-width: 465px;
-  gap: 22px;
-`;
+import { StyledForm } from "./styled";
 
 const Form = () => {
   const handleSubmit = async (e: any) => {
@@ -25,10 +16,11 @@ const Form = () => {
       timer: 2000,
       showConfirmButton: false,
     });
+    //TODO: endpoint and check response
   };
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <Caption primary={true}>Get on toch.</Caption>
+      <Caption primary={true}>Get in touch.</Caption>
       <Input type='text' placeholder='Name' name='name' />
       <Input type='email' placeholder='Email' name='email' />
       <Input type='textarea' placeholder='Comments' name='comments' />

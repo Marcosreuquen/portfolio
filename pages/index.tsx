@@ -8,8 +8,10 @@ import Testimonials from "components/Testimonials";
 import Stack from "components/Stack";
 import Contact from "components/Contact";
 import MainLayout from "components/MainLayout";
+import { useApiTest } from "hooks";
 
 const Home: NextPage = () => {
+  useApiTest();
   return (
     <div>
       <Head>

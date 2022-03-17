@@ -1,4 +1,4 @@
-import { StyledP } from "./style";
+import { StyledP } from "./styled";
 
 export type weightType = "bold" | "regular" | "italic";
 
