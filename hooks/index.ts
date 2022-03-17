@@ -95,9 +95,3 @@ export const useAboutMe = () => {
 
   return aboutme;
 };
-
-export const useApiTest = async () => {
-  const res = await (await fetch("/api/hello")).json();
-  console.log(res);
-  return res;
-};
