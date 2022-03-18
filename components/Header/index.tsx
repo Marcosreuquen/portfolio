@@ -5,7 +5,7 @@ import { Container, StyledHeader, Div } from "./styled";
 const Header = () => {
   return (
     <Container id='home'>
-      <StyledHeader>
+      <StyledHeader className='first-bg'>
         <Div>
           <Caption primary={false}>MARCOS REUQUEN</Caption>
           <Title first='Fullstack' second='Developer'></Title>

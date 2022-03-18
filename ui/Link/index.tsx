@@ -10,7 +10,7 @@ const Link = (props: {
   icon: iconSize;
 }) => {
   return (
-    <StyledA href={props.url} iconSize={props.icon}>
+    <StyledA href={props.url} iconSize={props.icon} target='_blank'>
       <Icon src={props.img} alt={props.name} iconSize={props.icon} />
       <Paragraph weight='regular'>{props.name}</Paragraph>
     </StyledA>

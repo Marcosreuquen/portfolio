@@ -15,7 +15,7 @@ export const Card = styled.div`
     transition: 1s;
   }
   &:hover > div::before {
-    transform: translatex(-360px);
+    transform: translateY(-360px);
     opacity: 0;
   }
 `;

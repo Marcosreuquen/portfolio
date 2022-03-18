@@ -60,15 +60,12 @@ export const useProjects = () => {
 
 export const useTestimonials = () => {
   const content = useCMD("testimonials");
-
   const assets = content?.includes.Asset;
 
   const testimonials = content?.items.map((item: any) => {
     const assetId = item.fields.img.sys.id;
-
     const asset = assets.find((assetItem: any) => {
       const id = assetItem.sys.id;
-
       if (id === assetId) return true;
     });
     const img: string = "https:" + asset.fields.file.url;

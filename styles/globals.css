@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100;400;700&family=Space+Grotesk:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&family=Roboto:wght@100;400;700&family=Space+Grotesk:wght@400;700&display=swap"); */
 
 html,
 :root {
@@ -32,4 +32,16 @@ a {
   /* background-color: var(--strong-black) !important; */
   padding: 8px !important;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.first-bg {
+  height: 100vh;
+  background-image: url(/bg-opt.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
 }

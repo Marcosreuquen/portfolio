@@ -3,17 +3,25 @@ import { useEffect, useState } from "react";
 import Paragraph from "ui/Paragraph";
 import PersonCard from "ui/PersonCard";
 import { Buttons, LeftButton, RightButton, Quote, Section } from "./styled";
-const Fade = require("react-reveal/Fade");
+const Flip = require("react-reveal/Flip");
 
 const Testimonials = () => {
-  const testimonials: any[] = useTestimonials() || [];
+  const testimonials = useTestimonials() || [];
   const [index, setIndex] = useState(0);
-  const [client, setClient] = useState(testimonials.at(index) || {});
+  const [client, setClient] = useState(testimonials[index] || {});
   const [change, setChange] = useState(true);
 
   useEffect(() => {
+    console.log(testimonials);
+    setTimeout(() => {
+      setIndex(1);
+    }, 1000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     setChange(true);
-    setClient(testimonials.at(index));
+    setClient(testimonials[index]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
@@ -50,14 +58,12 @@ const Testimonials = () => {
         />
       </Buttons>
       <Section id='testimonials'>
-        {testimonials && client ? (
-          <Fade right when={change}>
-            <Quote>
-              <Paragraph weight='italic'>{client?.quote}</Paragraph>
-            </Quote>
-            <PersonCard img={client?.img}>{client?.name}</PersonCard>
-          </Fade>
-        ) : null}
+        <Flip right when={change}>
+          <Quote>
+            <Paragraph weight='italic'>{client?.quote}</Paragraph>
+          </Quote>
+          <PersonCard img={client?.img}>{client?.name}</PersonCard>
+        </Flip>
       </Section>
     </>
   );

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 export const StyledHeader = styled.header`
   height: 100vh;
-  background-image: url(/bg.png);
+  background-image: url(/bg-opt.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

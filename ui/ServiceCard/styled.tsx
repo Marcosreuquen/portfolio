@@ -4,9 +4,9 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2%;
-  width: 350px;
-  height: 470px;
+  padding: 20px;
+  width: 340px;
+  height: 400px;
   background: #f9f9f9;
   justify-content: space-evenly;
   border-radius: 8px;
@@ -19,6 +19,6 @@ export const Card = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 50%;
+  height: 40%;
   width: 100%;
 `;

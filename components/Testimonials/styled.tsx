@@ -4,6 +4,7 @@ export const Section = styled.section`
   grid-template-columns: 2fr 1fr;
   height: 40vh;
   background-color: var(--soft-grey);
+  max-width: 100vw;
   @media (max-width: 769px) {
     display: flex;
     height: 40vh;

@@ -8,6 +8,7 @@ import Testimonials from "components/Testimonials";
 import Stack from "components/Stack";
 import Contact from "components/Contact";
 import MainLayout from "components/MainLayout";
+import { useTestimonials } from "hooks";
 
 const Home: NextPage = () => {
   return (
