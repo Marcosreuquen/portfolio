@@ -12,13 +12,14 @@ export const StyledHeader = styled.header`
 `;
 
 export const Div = styled.div`
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
+  padding: 10px;
   width: fit-content;
   position: relative;
   top: 20%;
-  left: 10%;
+  /* left: 10%; */
   margin: 0;
 `;
 

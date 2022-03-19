@@ -24,11 +24,13 @@ export const MainContainer = styled.main`
 export const TitlesContainer = styled.article`
   grid-area: titles;
   width: 80%;
+  place-self: center;
 `;
 
 export const AboutMeContainer = styled.aside`
   grid-area: about;
   width: 80%;
+  place-self: center;
 `;
 
 export const ServicesContainer = styled.section`

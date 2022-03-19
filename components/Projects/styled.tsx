@@ -9,5 +9,5 @@ export const Grid = styled.article`
   gap: 30px;
   justify-content: center;
   align-items: center;
-  padding: 5% 0;
+  padding: 20px 5%;
 `;

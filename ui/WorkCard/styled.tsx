@@ -5,8 +5,8 @@ export const Card = styled.div`
   grid-template-rows: 1fr;
   align-items: center;
   justify-content: center;
-  min-height: 380px;
-  width: 380px;
+  height: 320px;
+  width: 320px;
   &:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     transform: scale(1.05);

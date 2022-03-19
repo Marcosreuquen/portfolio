@@ -6,4 +6,5 @@ export const Nav = styled.nav`
   align-items: center;
   gap: 12px;
   justify-self: center;
+  flex-wrap: wrap;
 `;

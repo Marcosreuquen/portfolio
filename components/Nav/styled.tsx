@@ -16,6 +16,7 @@ export const StyledNav = styled.nav`
 `;
 
 export const Item = styled.span`
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   gap: 8px;

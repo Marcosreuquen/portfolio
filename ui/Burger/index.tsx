@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { fallDown as Menu } from "react-burger-menu";
 import styled from "styled-components";
 
@@ -23,20 +24,45 @@ const MenuItem = styled.a`
 `;
 
 const Burger = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleClickOnSection = () => {
+    setMenuOpen(false);
+  };
   return (
     <Menu
+      disableOverlayClick
+      isOpen={menuOpen}
+      onOpen={() => setMenuOpen(true)}
+      onClose={() => setMenuOpen(false)}
       right
       width={"160px"}
       customBurgerIcon={<img src='/menu.svg' />}
+      customCrossIcon={<img src='/cross.svg' />}
       noOverlay>
-      <MenuItem href='#home'>Home</MenuItem>
-      <MenuItem href='#about'>About</MenuItem>
-      <MenuItem href='#services'>Services</MenuItem>
-      <MenuItem href='#projects'>Projects</MenuItem>
-      <MenuItem href='#testimonials'>Testimonials</MenuItem>
-      <MenuItem href='#technologies'>Technologies</MenuItem>
-      <MenuItem href='#contact'>Contact</MenuItem>
-      <MenuItem href='#socials'>Socials</MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#home'>
+        Home
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#about'>
+        About
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#services'>
+        Services
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#projects'>
+        Projects
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#testimonials'>
+        Testimonials
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#technologies'>
+        Technologies
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#contact'>
+        Contact
+      </MenuItem>
+      <MenuItem onClick={handleClickOnSection} href='#socials'>
+        Socials
+      </MenuItem>
     </Menu>
   );
 };

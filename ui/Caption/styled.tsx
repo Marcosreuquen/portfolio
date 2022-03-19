@@ -16,7 +16,8 @@ export const StyledCaption = styled.p`
     transition: 1s;
   }
   &:before {
-    content: "―――――――――――――――";
+    content: "―――――――――";
+    height: 1px;
     letter-spacing: -0.2em;
     margin-right: 8px;
   }

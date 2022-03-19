@@ -5,8 +5,8 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 20px;
-  width: 340px;
-  height: 400px;
+  width: 290px;
+  height: 380px;
   background: #f9f9f9;
   justify-content: space-evenly;
   border-radius: 8px;
@@ -19,6 +19,6 @@ export const Card = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 40%;
+  height: 35%;
   width: 100%;
 `;
