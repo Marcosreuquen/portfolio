@@ -16,3 +16,14 @@ export const contentFetcher = async (type: cmd_content_type) => {
     throw error;
   }
 };
+
+export async function sendMail(message: any) {
+  return await fetch("/api/contact", {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(message),
+  });
+}
