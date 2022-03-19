@@ -4,6 +4,10 @@ const nextConfig = {
   experimental: {
     styledComponents: true,
   },
+  i18n: {
+    locales: ["en", "es"],
+    defaultLocale: "en",
+  },
   // images: {
   //   domains: ["assets.vercel.com"],
   //   formats: ["image/jpg", "image/webp"],

@@ -1,14 +1,20 @@
+import { useTranslation } from "hooks";
 import Caption from "ui/Caption";
 import Subtitle from "ui/Subtitle";
 import TechCard from "ui/TechCard";
 import { Section, Grid } from "./styled";
 
 const Stack = () => {
+  const locale = useTranslation();
   return (
     <Section id='technologies'>
       <div>
         <Caption primary={true}>BACKGROUND</Caption>
-        <Subtitle>I work with this technologies</Subtitle>
+        <Subtitle>
+          {locale == "en"
+            ? "I work with this technologies"
+            : "Trabajo con estas tecnologías"}
+        </Subtitle>
       </div>
       <Grid>
         <TechCard img='/Typescript.svg' name='Typescript' />

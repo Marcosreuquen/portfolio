@@ -3,14 +3,19 @@ import Caption from "ui/Caption";
 import Subtitle from "ui/Subtitle";
 import WorkCard from "ui/WorkCard";
 import { Section, Grid } from "./styled";
-
+import { useTranslation } from "hooks";
 const Projects = () => {
   const projects = useProjects();
+  const locale = useTranslation();
 
   return (
     <Section id='projects'>
-      <Caption primary={true}>MY PROJECTS</Caption>
-      <Subtitle>This is my work</Subtitle>
+      <Caption primary={true}>
+        {locale == "en" ? "MY PROJECTS" : "MIS PROYECTOS"}
+      </Caption>
+      <Subtitle>
+        {locale == "en" ? "This is my work" : "Estos son mis trabajos"}
+      </Subtitle>
       <Grid>
         {projects?.map((project: any) => {
           return (

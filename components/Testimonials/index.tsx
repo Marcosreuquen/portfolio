@@ -12,7 +12,6 @@ const Testimonials = () => {
   const [change, setChange] = useState(true);
 
   useEffect(() => {
-    console.log(testimonials);
     setTimeout(() => {
       setIndex(1);
     }, 1000);

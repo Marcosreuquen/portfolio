@@ -4,11 +4,15 @@ export type cmd_content_type =
   | "aboutme"
   | "testimonials";
 
-export const contentFetcher = async (type: cmd_content_type) => {
-  const url =
-    "https://cdn.contentful.com/spaces/c46xwnyuulfo/environments/master/entries?access_token=QEiYcc0Jw2mqa7DQKtErqg5yrRIocdRHjwCAiyz1SMc&content_type=";
+export type localeString = "es" | "en";
+
+export const contentFetcher = async (
+  type: cmd_content_type,
+  locale: localeString
+) => {
+  const url = `https://cdn.contentful.com/spaces/c46xwnyuulfo/environments/master/entries?access_token=QEiYcc0Jw2mqa7DQKtErqg5yrRIocdRHjwCAiyz1SMc&content_type=${type}&locale=${locale}`;
   try {
-    const content = await (await fetch(url + type)).json();
+    const content = await (await fetch(url)).json();
     if (content.status < 500 && content.status > 399) throw new Error(content);
     return content;
   } catch (error) {

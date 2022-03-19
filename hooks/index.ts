@@ -1,10 +1,11 @@
 import useSWRImmutable from "swr";
-import { contentFetcher } from "lib";
+import { contentFetcher, localeString } from "lib";
 import type { cmd_content_type } from "lib";
-import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const useCMD = (type: cmd_content_type) => {
-  const { data, error } = useSWRImmutable(type, contentFetcher);
+  const locale: localeString = useTranslation();
+  const { data, error } = useSWRImmutable([type, locale], contentFetcher);
   return data;
 };
 
@@ -57,7 +58,6 @@ export const useProjects = () => {
   });
   return projects;
 };
-
 export const useTestimonials = () => {
   const content = useCMD("testimonials");
   const assets = content?.includes.Asset;
@@ -82,7 +82,6 @@ export const useTestimonials = () => {
 
 export const useAboutMe = () => {
   const content = useCMD("aboutme");
-
   const item = content?.items[0];
 
   const aboutme = {
@@ -91,4 +90,11 @@ export const useAboutMe = () => {
   };
 
   return aboutme;
+};
+
+export const useTranslation = (): localeString => {
+  const router = useRouter();
+  const { locale } = router;
+  const t = locale === "en" ? "en" : "es";
+  return t;
 };

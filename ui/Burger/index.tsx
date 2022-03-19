@@ -1,6 +1,8 @@
+import { useTranslation } from "hooks";
 import { useState } from "react";
 import { fallDown as Menu } from "react-burger-menu";
 import styled from "styled-components";
+import SelectLocale from "ui/SelectLocale";
 
 const MenuItem = styled.a`
   color: var(--soft-grey);
@@ -28,6 +30,7 @@ const Burger = () => {
   const handleClickOnSection = () => {
     setMenuOpen(false);
   };
+  const locale = useTranslation();
   return (
     <Menu
       disableOverlayClick
@@ -43,26 +46,27 @@ const Burger = () => {
         Home
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#about'>
-        About
+        {locale == "en" ? "About me" : "Sobre mi"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#services'>
-        Services
+        {locale == "en" ? "Services" : "Servicios"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#projects'>
-        Projects
+        {locale == "en" ? "Projects" : "Proyectos"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#testimonials'>
-        Testimonials
+        {locale == "en" ? "Testimonials" : "Opiniones"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#technologies'>
-        Technologies
+        {locale == "en" ? "Technologies" : "Tecnologías"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#contact'>
-        Contact
+        {locale == "en" ? "Contact" : "Contacto"}
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#socials'>
-        Socials
+        {locale == "en" ? "Socials" : "Sociales"}
       </MenuItem>
+      <SelectLocale />
     </Menu>
   );
 };

@@ -1,4 +1,4 @@
-import { useAboutMe, useServices } from "hooks";
+import { useAboutMe, useServices, useTranslation } from "hooks";
 import Caption from "ui/Caption";
 import Paragraph from "ui/Paragraph";
 import Service from "ui/ServiceCard";
@@ -14,11 +14,13 @@ import {
 const Main = () => {
   const services = useServices();
   const aboutMe = useAboutMe();
-
+  const locale = useTranslation();
   return (
     <MainContainer id='about'>
       <TitlesContainer>
-        <Caption primary={true}>ABOUT ME</Caption>
+        <Caption primary={true}>
+          {locale == "en" ? "ABOUT ME" : "SOBRE MI"}
+        </Caption>
         <Subtitle>{aboutMe?.greetings}</Subtitle>
       </TitlesContainer>
       <AboutMeContainer>

@@ -4,8 +4,10 @@ import Input from "ui/Input";
 import Swal from "sweetalert2";
 import { sendMail } from "lib";
 import { StyledForm } from "./styled";
+import { useTranslation } from "hooks";
 
 const Form = () => {
+  const locale = useTranslation();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -35,10 +37,20 @@ const Form = () => {
   };
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <Caption primary={true}>Get in touch.</Caption>
-      <Input type='text' placeholder='Name' name='name' />
+      <Caption primary={true}>
+        {locale == "en" ? "Get in touch." : "Ponte en contacto."}
+      </Caption>
+      <Input
+        type='text'
+        placeholder={locale == "en" ? "Name" : "Nombre"}
+        name='name'
+      />
       <Input type='email' placeholder='Email' name='email' />
-      <Input type='textarea' placeholder='Comments' name='comments' />
+      <Input
+        type='textarea'
+        placeholder={locale == "en" ? "Comments" : "Comentarios"}
+        name='comments'
+      />
       <Button>Enviar</Button>
     </StyledForm>
   );
