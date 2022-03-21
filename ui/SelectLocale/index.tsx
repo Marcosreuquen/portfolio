@@ -7,7 +7,8 @@ const SelectLocale = () => {
   const locale = useTranslation();
   const handleChangeLocale = (e: any) => {
     const newLocale = e.target.value;
-    router.push("/", "/", { locale: newLocale });
+    console.log(router);
+    router.push("", "", { locale: newLocale });
   };
 
   return (

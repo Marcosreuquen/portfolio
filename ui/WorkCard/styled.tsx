@@ -12,7 +12,7 @@ export const Card = styled.div`
     transform: scale(1.05);
     box-shadow: rgb(0 0 / 80%) 0px 40px 58px -16px;
     border-color: rgba(249, 249, 249, 0.8);
-    transition: 1s;
+    transition: 0.7s;
   }
   &:hover > div::before {
     transform: translateY(-360px);

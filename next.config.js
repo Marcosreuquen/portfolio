@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withSvgr = require("next-svgr");
+
+const nextConfig = withSvgr({
   reactStrictMode: true,
   experimental: {
     styledComponents: true,
@@ -7,11 +9,8 @@ const nextConfig = {
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
+    default: "en",
   },
-  // images: {
-  //   domains: ["assets.vercel.com"],
-  //   formats: ["image/jpg", "image/webp"],
-  // },
-};
+});
 
 module.exports = nextConfig;

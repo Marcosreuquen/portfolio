@@ -26,11 +26,11 @@ const MenuItem = styled.a`
 `;
 
 const Burger = () => {
+  const locale = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const handleClickOnSection = () => {
+  const handleClickOnSection = (e: any) => {
     setMenuOpen(false);
   };
-  const locale = useTranslation();
   return (
     <Menu
       disableOverlayClick
@@ -42,7 +42,7 @@ const Burger = () => {
       customBurgerIcon={<img src='/menu.svg' />}
       customCrossIcon={<img src='/cross.svg' />}
       noOverlay>
-      <MenuItem onClick={handleClickOnSection} href='#home'>
+      <MenuItem onClick={handleClickOnSection} href={"#home"}>
         Home
       </MenuItem>
       <MenuItem onClick={handleClickOnSection} href='#about'>

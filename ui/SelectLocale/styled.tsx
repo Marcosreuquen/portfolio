@@ -4,7 +4,7 @@ export const StyledSelect = styled.select`
   padding: 9px 24px;
   width: 105px;
   height: 26px;
-  background-color: var(--primary);
+  background-color: var(--black);
   border-radius: 4px;
   color: var(--strong-white);
   font-family: var(--font-body);

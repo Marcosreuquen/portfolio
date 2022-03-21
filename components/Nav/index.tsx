@@ -1,6 +1,7 @@
 import { StyledNav, Item, Image } from "./styled";
 import Burger from "ui/Burger";
 import { useRouter } from "next/router";
+
 const Nav = () => {
   const router = useRouter();
 
