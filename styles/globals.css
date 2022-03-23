@@ -32,6 +32,8 @@ a {
   /* background-color: var(--strong-black) !important; */
   padding: 8px !important;
   background: rgba(0, 0, 0, 0.5);
+  height: auto !important;
+  transition: 1s !important;
 }
 
 .first-bg {

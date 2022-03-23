@@ -6,22 +6,9 @@ import SelectLocale from "ui/SelectLocale";
 
 const MenuItem = styled.a`
   color: var(--soft-grey);
-  &::after {
-    content: "";
-    height: 2px;
-    background: white;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -6px;
-    opacity: 0;
-    transform-origin: left center;
-    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: scaleX(0);
-  }
-  &:hover::after {
-    /* transform: scaleX(1); */
-    opacity: 1;
+  &:hover {
+    color: var(--primary);
+    transition: 1s;
   }
 `;
 

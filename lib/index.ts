@@ -1,3 +1,6 @@
+import Swal from "sweetalert2";
+import type { SweetAlertIcon } from "sweetalert2";
+
 export type cmd_content_type =
   | "works"
   | "services"
@@ -29,5 +32,30 @@ export async function sendMail(message: any) {
     },
     method: "POST",
     body: JSON.stringify(message),
+  });
+}
+
+export async function uploadTestimonial(message: any) {
+  const res = await fetch("/api/testimonial", {
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(message),
+  });
+  console.log(res);
+  return res;
+}
+
+export function fire(title: string, icon: SweetAlertIcon) {
+  Swal.fire({
+    title,
+    icon,
+    background: "#2e2e2e",
+    color: "#f1f1f1",
+    timer: 3000,
+    showConfirmButton: false,
+    timerProgressBar: true,
   });
 }

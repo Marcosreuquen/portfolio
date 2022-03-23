@@ -56,14 +56,14 @@ const Testimonials = () => {
           onClick={handleNext}
         />
       </Buttons>
-      <Section id='testimonials'>
-        <Flip right when={change}>
+      <Flip right when={change}>
+        <Section id='testimonials'>
           <Quote>
             <Paragraph weight='italic'>{client?.quote}</Paragraph>
           </Quote>
           <PersonCard img={client?.img}>{client?.name}</PersonCard>
-        </Flip>
-      </Section>
+        </Section>
+      </Flip>
     </>
   );
 };

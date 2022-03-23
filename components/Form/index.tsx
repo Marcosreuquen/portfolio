@@ -5,35 +5,31 @@ import Swal from "sweetalert2";
 import { sendMail } from "lib";
 import { StyledForm } from "./styled";
 import { useTranslation } from "hooks";
+import { fire } from "lib";
 
 const Form = () => {
   const locale = useTranslation();
   const handleSubmit = async (e: any) => {
+    let valueEmpy: boolean = false;
     e.preventDefault();
     const data = new FormData(e.target);
-    const value = Object.fromEntries(data.entries());
-    const mailSended = await sendMail(value);
-    if (mailSended.status == 200)
-      Swal.fire({
-        title:
+    data.forEach((value, key) => {
+      if (!value) {
+        fire(`El campo ${key} no puede estar incompleto.`, "error");
+        valueEmpy = true;
+      }
+    });
+    if (!valueEmpy) {
+      const value = Object.fromEntries(data.entries());
+      const mailSended = await sendMail(value);
+      if (mailSended.status == 200)
+        fire(
           "¡Muchas gracias por tu contacto! Muy pronto estaré respondiendo tu consulta.",
-        icon: "success",
-        timer: 3000,
-        background: "#2e2e2e",
-        color: "#f1f1f1",
-        showConfirmButton: false,
-        timerProgressBar: true,
-      });
-    if (mailSended.status != 200)
-      Swal.fire({
-        title: "Ouch, algo salió mal. Intentá de nuevo más tarde.",
-        icon: "error",
-        background: "#2e2e2e",
-        color: "#f1f1f1",
-        timer: 3000,
-        showConfirmButton: false,
-        timerProgressBar: true,
-      });
+          "success"
+        );
+      if (mailSended.status != 200)
+        fire("Ouch, algo salió mal. Intentá de nuevo más tarde.", "error");
+    }
   };
   return (
     <StyledForm onSubmit={handleSubmit}>
