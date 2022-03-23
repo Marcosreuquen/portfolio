@@ -60,7 +60,12 @@ function TestimonialForm() {
           placeholder={locale == "en" ? "Name" : "Nombre"}
           name='name'
         />
-        <Input type='text' placeholder='Linkedin' name='linkedin' />
+        <Input
+          type='text'
+          placeholder='Linkedin'
+          name='linkedin'
+          defaultValue='https://linkedin.com/in/'
+        />
         <Input
           type='textarea'
           placeholder={locale == "en" ? "Comments" : "Comentarios"}

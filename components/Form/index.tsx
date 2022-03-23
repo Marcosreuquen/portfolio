@@ -47,7 +47,7 @@ const Form = () => {
         placeholder={locale == "en" ? "Comments" : "Comentarios"}
         name='comments'
       />
-      <Button>Enviar</Button>
+      <Button>{locale == "en" ? "Send" : "Enviar"}</Button>
     </StyledForm>
   );
 };

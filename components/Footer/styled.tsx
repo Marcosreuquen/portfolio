@@ -6,9 +6,14 @@ export const Container = styled.footer`
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 8px;
+  flex-direction: column;
+  gap: unset;
+  justify-content: unset;
+  @media (min-width: 769px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
 `;
 
 export const Name = styled.p`

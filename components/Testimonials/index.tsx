@@ -43,28 +43,26 @@ const Testimonials = () => {
   };
 
   return (
-    <>
-      <Buttons>
-        <LeftButton
-          src='/swip_left.svg'
-          alt='previous client'
-          onClick={handlePrev}
-        />
-        <RightButton
-          src='/swip_right.svg'
-          alt='previous client'
-          onClick={handleNext}
-        />
-      </Buttons>
-      <Flip right when={change}>
-        <Section id='testimonials'>
-          <Quote>
-            <Paragraph weight='italic'>{client?.quote}</Paragraph>
-          </Quote>
-          <PersonCard img={client?.img}>{client?.name}</PersonCard>
-        </Section>
-      </Flip>
-    </>
+    <Flip right when={change}>
+      <Section id='testimonials'>
+        <Buttons>
+          <LeftButton
+            src='/swip_left.svg'
+            alt='previous client'
+            onClick={handlePrev}
+          />
+          <RightButton
+            src='/swip_right.svg'
+            alt='previous client'
+            onClick={handleNext}
+          />
+        </Buttons>
+        <Quote>
+          <Paragraph weight='italic'>{client?.quote}</Paragraph>
+        </Quote>
+        <PersonCard img={client?.img}>{client?.name}</PersonCard>
+      </Section>
+    </Flip>
   );
 };
 

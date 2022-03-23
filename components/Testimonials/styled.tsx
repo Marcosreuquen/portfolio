@@ -2,12 +2,11 @@ import styled from "styled-components";
 export const Section = styled.section`
   display: grid;
   grid-template-columns: 2fr 1fr;
-  height: 40vh;
+  height: 50vh;
   background-color: var(--soft-grey);
   max-width: 100vw;
   @media (max-width: 769px) {
     display: flex;
-    height: 40vh;
     flex-direction: column-reverse;
   } ;
 `;
@@ -24,7 +23,7 @@ export const Buttons = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  height: 40vh;
+  height: 50%;
   z-index: 10;
 `;
 export const LeftButton = styled.img`
@@ -32,8 +31,9 @@ export const LeftButton = styled.img`
   filter: drop-shadow(2px 3px 2px var(--primary));
   position: absolute;
   top: 44%;
-  left: 4px;
+  left: 8px;
   padding: 4px;
+  height: 40px;
   &:hover {
     filter: drop-shadow(2px 3px 2px var(--black));
     transition: 1s;
@@ -44,7 +44,9 @@ export const RightButton = styled.img`
   filter: drop-shadow(2px 3px 2px var(--primary));
   position: absolute;
   top: 44%;
-  right: 4px;
+  padding: 4px;
+  right: 8px;
+  height: 40px;
   &:hover {
     filter: drop-shadow(2px 3px 2px var(--black));
     transition: 1s;
