@@ -1,10 +1,11 @@
 import * as contentful from "contentful-management";
+import { sendUploadedTestimonial } from "./email";
 
 const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_MANAGEMENT_API_KEY || "",
 });
 
-export function uploadTestimonial({
+export async function uploadTestimonial({
   name,
   linkedin,
   comments,
@@ -13,6 +14,7 @@ export function uploadTestimonial({
   linkedin: string;
   comments: string;
 }) {
+  await sendUploadedTestimonial({ name, linkedin, comments });
   return client
     .getSpace("c46xwnyuulfo")
     .then((space: any) => space.getEnvironment("master"))

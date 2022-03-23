@@ -87,3 +87,15 @@ export async function sendContactEmail(message: any) {
     `,
   });
 }
+
+export async function sendUploadedTestimonial(message: any) {
+  return await sgMail.send({
+    to: "marcosreuquendiaz@gmail.com", // Change to your recipient
+    from: "marcosreuquendiaz@gmail.com", // Change to your verified sender
+    subject: `Recomendación nueva en web Marcos Reuquén`,
+    text: `
+      Nueva recomendación:
+      ${(message.name, " ", message.linkedin, " ", message.comments)}
+    `,
+  });
+}
