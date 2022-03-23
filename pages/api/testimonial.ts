@@ -6,7 +6,7 @@ import * as yup from "yup";
 const bodySchema = yup
   .object()
   .shape({
-    linkedin: yup.string().url().required(),
+    linkedin: yup.string().required(),
     name: yup.string().required(),
     comments: yup.string().required(),
   })
