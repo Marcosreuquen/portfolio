@@ -95,7 +95,7 @@ export async function sendUploadedTestimonial(message: any) {
     subject: `Recomendación nueva en web Marcos Reuquén`,
     text: `
       Nueva recomendación:
-      ${(message.name, " ", message.linkedin, " ", message.comments)}
+      ${JSON.stringify(message)}
     `,
   });
 }
