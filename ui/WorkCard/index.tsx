@@ -1,6 +1,7 @@
 import Paragraph from "ui/Paragraph";
 import { Card, Nav, Content } from "./styled";
 import Link from "ui/Link";
+import { CodeIcon, WebIcon } from "ui/icons";
 const Fade = require("react-reveal/Fade");
 
 const WorkCard = (props: {
@@ -18,15 +19,14 @@ const WorkCard = (props: {
           <Paragraph weight='regular'>{props.children}</Paragraph>
           <Nav>
             {props.repo ? (
-              <Link
-                url={props.repo}
-                img='/code.svg'
-                name='Repository'
-                icon='s'
-              />
+              <Link url={props.repo} name='Repository' iconSize='s'>
+                <CodeIcon />
+              </Link>
             ) : null}
             {props.web ? (
-              <Link icon='s' img='/web.svg' name='Demo' url={props.web} />
+              <Link iconSize='s' name='Demo' url={props.web}>
+                <WebIcon />
+              </Link>
             ) : null}
           </Nav>
         </Content>

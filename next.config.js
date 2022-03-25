@@ -11,6 +11,14 @@ const nextConfig = withSvgr({
     defaultLocale: "en",
     default: "en",
   },
+  images: {
+    domains: [
+      "cdn.contentful.com",
+      "assets.vercel.com",
+      "images.ctfassets.net",
+    ],
+    formats: ["image/avif", "image/webp"],
+  },
 });
 
 module.exports = nextConfig;

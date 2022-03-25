@@ -27,9 +27,8 @@ export const Item = styled.span`
   font-weight: 600;
   letter-spacing: 0em;
   text-align: left;
-`;
-
-export const Image = styled.img`
-  height: 25px;
-  width: 25px;
+  & > svg {
+    height: 25px;
+    width: 25px;
+  }
 `;

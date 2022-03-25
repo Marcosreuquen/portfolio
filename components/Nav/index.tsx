@@ -1,8 +1,9 @@
-import { StyledNav, Item, Image } from "./styled";
+import { StyledNav, Item } from "./styled";
 import Burger from "ui/Burger";
 import { useRouter } from "next/router";
+import { TerminalIcon } from "ui/icons";
 
-const Nav = () => {
+const Nav = ({ ListItem }: any) => {
   const router = useRouter();
 
   const handleLogoClick = () => {
@@ -11,11 +12,11 @@ const Nav = () => {
   return (
     <StyledNav>
       <Item onClick={handleLogoClick}>
-        <Image src='/terminal.svg' alt='logo' />
+        <TerminalIcon />
         <span>Marcos Reuquén</span>
       </Item>
       <Item>
-        <Burger />
+        <Burger ListItem={ListItem} />
         <span>Menu</span>
       </Item>
     </StyledNav>

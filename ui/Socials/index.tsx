@@ -1,3 +1,10 @@
+import {
+  DiscordIcon,
+  GithubIcon,
+  LinkedinIcon,
+  MailIcon,
+  ScheduleIcon,
+} from "ui/icons";
 import Link from "ui/Link";
 import { Nav } from "./styled";
 
@@ -5,36 +12,36 @@ const Socials = (props: { burger?: boolean }) => {
   return (
     <Nav id='socials'>
       <Link
-        icon={props.burger ? "s" : "m"}
-        img='/linkedin.svg'
+        iconSize={props.burger ? "s" : "m"}
         name='Linkedin'
-        url='https://www.linkedin.com/in/marcos-reuquen-diaz'
-      />
+        url='https://www.linkedin.com/in/marcos-reuquen-diaz'>
+        <LinkedinIcon />
+      </Link>
       <Link
-        icon={props.burger ? "s" : "m"}
-        img='/github.svg'
+        iconSize={props.burger ? "s" : "m"}
         name='Github'
-        url='https://github.com/Marcosreuquen'
-      />
+        url='https://github.com/Marcosreuquen'>
+        <GithubIcon small />
+      </Link>
       <Link
-        icon={props.burger ? "s" : "m"}
-        img='/mail.svg'
+        iconSize={props.burger ? "s" : "m"}
         name='Email'
-        url='mailto:marcosreuquendiaz@gmail.com'
-      />
+        url='mailto:marcosreuquendiaz@gmail.com'>
+        <MailIcon />
+      </Link>
       <Link
-        icon={props.burger ? "s" : "m"}
-        img='/schedule.svg'
+        iconSize={props.burger ? "s" : "m"}
         name='Calendly'
-        url='https://calendly.com/marcosreuquendiaz'
-      />
+        url='https://calendly.com/marcosreuquendiaz'>
+        <ScheduleIcon />
+      </Link>
 
       <Link
-        icon={props.burger ? "s" : "m"}
-        img='/discord.svg'
+        iconSize={props.burger ? "s" : "m"}
         name='Discord'
-        url='https://discord.com/invite/marcosreuquen#6569'
-      />
+        url='https://discord.com/invite/marcosreuquen#6569'>
+        <DiscordIcon />
+      </Link>
     </Nav>
   );
 };

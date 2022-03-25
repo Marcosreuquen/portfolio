@@ -9,6 +9,7 @@ import Stack from "components/Stack";
 import Contact from "components/Contact";
 import MainLayout from "components/MainLayout";
 import { nerd } from "lib/nerd";
+import MainMenu from "ui/mainMenu";
 
 const Home: NextPage = () => {
   nerd();
@@ -23,11 +24,11 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/terminal.svg' />
       </Head>
-      <MainLayout>
+      <MainLayout ListItem={MainMenu}>
         <Header />
         <Main />
         <Projects />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Stack />
         <Contact />
       </MainLayout>

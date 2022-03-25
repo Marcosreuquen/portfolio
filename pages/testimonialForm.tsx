@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { nerd } from "lib/nerd";
-
+import TestimonialFormMenu from "ui/TestimonialFormMenu";
 import MainLayout from "components/MainLayout";
 import { TestimonialForm } from "components/TestimonialForm";
 
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/terminal.svg' />
       </Head>
-      <MainLayout>
+      <MainLayout ListItem={TestimonialFormMenu}>
         <TestimonialForm />
       </MainLayout>
     </div>

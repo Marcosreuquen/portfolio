@@ -9,7 +9,7 @@ export const Card = styled.div`
   justify-content: center;
   gap: 8px;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
   &::after {
     content: "${({ name }: { name: string }) => name}";
     font-weight: 400;
@@ -21,15 +21,15 @@ export const Card = styled.div`
     transition: 1s;
     opacity: 0.6;
   }
-`;
-export const Image = styled.img`
-  height: 128px;
-  width: 128px;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  &:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-    transition: 1s;
+  & > svg {
+    height: 128px;
+    width: 128px;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    &:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+      transition: 1s;
+    }
   }
 `;
