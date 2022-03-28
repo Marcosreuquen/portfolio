@@ -29,6 +29,7 @@ import Terminal from "./terminal.svg";
 import Web from "./web.svg";
 import Python from "./Python.svg";
 import Menu from "./menu.svg";
+import Styled from "./styled-components.svg";
 
 export const SequelizeIcon = () => <Sequelize />;
 export const YarnIcon = () => <Yarn />;
@@ -61,3 +62,4 @@ export const TerminalIcon = () => <Terminal />;
 export const WebIcon = () => <Web />;
 export const PythonIcon = () => <Python />;
 export const MenuIcon = () => <Menu />;
+export const StyledComponentsIcon = () => <Styled />;

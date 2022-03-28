@@ -16,6 +16,7 @@ import {
   PostgreSqlIcon,
   ReactIcon,
   SequelizeIcon,
+  StyledComponentsIcon,
   TypescriptIcon,
   WebpackIcon,
   YarnIcon,
@@ -87,6 +88,15 @@ const Stack = () => {
         </TechCard>
         <TechCard name='Webpack'>
           <WebpackIcon />
+        </TechCard>
+        <TechCard name='Styled Components'>
+          <StyledComponentsIcon />
+        </TechCard>
+        <TechCard name='Yarn'>
+          <YarnIcon />
+        </TechCard>
+        <TechCard name='NPM'>
+          <NpmIcon />
         </TechCard>
       </Grid>
     </Section>

@@ -3,13 +3,11 @@ import styled from "styled-components";
 export const Card = styled.div`
   height: 100%;
   width: 100%;
-  background-color: var(--strong-white);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
   align-items: center;
-  padding: 20px;
   &::after {
     content: "${({ name }: { name: string }) => name}";
     font-weight: 400;
