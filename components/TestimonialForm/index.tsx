@@ -61,10 +61,10 @@ function TestimonialForm() {
           name='name'
         />
         <Input
-          type='text'
+          type='url'
           placeholder='Linkedin'
           name='linkedin'
-          defaultValue='https://linkedin.com/in/'
+          // defaultValue='https://linkedin.com/in/'
         />
         <Input
           type='textarea'

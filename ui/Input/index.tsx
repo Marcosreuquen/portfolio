@@ -1,7 +1,7 @@
 import { type } from "os";
 import { StyledInput, StyledTextArea } from "./styled";
 
-type inputs = "textarea" | "email" | "text";
+type inputs = "textarea" | "email" | "text" | "url";
 const Input = (props: {
   type: inputs;
   placeholder: string;
